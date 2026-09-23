@@ -1,0 +1,14 @@
+{
+  "info":{"name":"ProjectMonitor API","schema":"https://schema.getpostman.com/json/collection/v2.1.0/collection.json"},
+  "variable":[{"key":"baseUrl","value":"http://localhost:8080/api"},{"key":"token","value":""}],
+  "item":[
+    {"name":"Health","request":{"method":"GET","url":"{{baseUrl}}/health"}},
+    {"name":"Login","request":{"method":"POST","header":[{"key":"Content-Type","value":"application/json"}],"body":{"mode":"raw","raw":"{\n  \"email\": \"admin@projectmonitor.com\",\n  \"password\": \"admin123\"\n}"},"url":"{{baseUrl}}/auth/login"}},
+    {"name":"Dashboard","request":{"method":"GET","header":[{"key":"Authorization","value":"Bearer {{token}}"}],"url":"{{baseUrl}}/dashboard"}},
+    {"name":"List Projects","request":{"method":"GET","header":[{"key":"Authorization","value":"Bearer {{token}}"}],"url":"{{baseUrl}}/projects"}},
+    {"name":"Create Project","request":{"method":"POST","header":[{"key":"Authorization","value":"Bearer {{token}}"},{"key":"Content-Type","value":"application/json"}],"body":{"mode":"raw","raw":"{\n  \"name\": \"Digital India Portal\",\n  \"description\": \"Hackathon demo project\",\n  \"startDate\": \"2026-09-03\",\n  \"endDate\": \"2026-12-31\",\n  \"budget\": 5000000,\n  \"status\": \"IN_PROGRESS\"\n}"},"url":"{{baseUrl}}/projects"}},
+    {"name":"List Tasks","request":{"method":"GET","header":[{"key":"Authorization","value":"Bearer {{token}}"}],"url":"{{baseUrl}}/tasks"}},
+    {"name":"Create Task","request":{"method":"POST","header":[{"key":"Authorization","value":"Bearer {{token}}"},{"key":"Content-Type","value":"application/json"}],"body":{"mode":"raw","raw":"{\n  \"title\": \"Build authentication module\",\n  \"description\": \"Implement secure login\",\n  \"deadline\": \"2026-09-15\",\n  \"priority\": \"HIGH\",\n  \"status\": \"PENDING\",\n  \"projectId\": 1,\n  \"assignedToId\": 1\n}"},"url":"{{baseUrl}}/tasks"}},
+    {"name":"List Users","request":{"method":"GET","header":[{"key":"Authorization","value":"Bearer {{token}}"}],"url":"{{baseUrl}}/users"}}
+  ]
+}

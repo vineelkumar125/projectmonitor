@@ -1,0 +1,1 @@
+package com.projectmonitor.repository; import com.projectmonitor.entity.Project; import org.springframework.data.jpa.repository.JpaRepository; public interface ProjectRepository extends JpaRepository<Project,Long>{ long countByStatus(com.projectmonitor.entity.ProjectStatus status); }
