@@ -1,4 +1,4 @@
-# ProjectMonitor - SIH-style Project Monitoring Platform
+# ProjectMonitor - Project Monitoring Platform
 
 A complete beginner-friendly hackathon MVP using React, Spring Boot, MySQL and JWT security.
 
